@@ -79,6 +79,21 @@ const Vector3D Vector3D::operator+(const Vector3D& rhs) const
 	return Vector3D(_x + rhs.GetX(), _y + rhs.GetY(), _z + rhs.GetZ());
 }
 
+const Vector3D Vector3D::operator-(const Vector3D& rhs) const
+{
+	return Vector3D(_x - rhs.GetX(), _y - rhs.GetY(), _z - rhs.GetZ());
+}
+
+const Vector3D Vector3D::operator-() const
+{
+	return Vector3D(-_x, -_y, -_z);
+}
+
+const Vector3D Vector3D::operator*(const float rhs) const
+{
+	return Vector3D(_x * rhs, _y * rhs, _z * rhs);
+}
+
 const Vector3D Vector3D::operator/(const int rhs) const
 {
 	return Vector3D(_x / rhs, _y / rhs, _z / rhs);

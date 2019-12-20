@@ -6,11 +6,12 @@ class Polygon3D
 {
 public:
 	Polygon3D();
-	Polygon3D(int index0, int index1, int index2);
+	Polygon3D(int index0, int index1, int index2, int uvIndex0, int uvIndex1, int uvIndex2);
 	~Polygon3D();
 	Polygon3D(const Polygon3D& p);
 
 	int GetIndex(int index) const;
+	int GetUVIndex(int index) const;
 	bool GetVisibility() const;
 	Vector3D GetNormalVector() const;
 	float GetAverageZ() const;
@@ -25,6 +26,7 @@ public:
 
 private:
 	int _indices[3];
+	int _uvIndices[3];
 	bool _isVisible = true;
 	Vector3D _normalVector;
 	float _averageZ;

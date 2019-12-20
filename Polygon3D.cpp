@@ -4,11 +4,14 @@ Polygon3D::Polygon3D() : _indices{ 0 }
 {
 }
 
-Polygon3D::Polygon3D(int index0, int index1, int index2)
+Polygon3D::Polygon3D(int index0, int index1, int index2, int uvIndex0, int uvIndex1, int uvIndex2)
 {
 	_indices[0] = index0;
 	_indices[1] = index1;
 	_indices[2] = index2;
+	_uvIndices[0] = uvIndex0;
+	_uvIndices[1] = uvIndex1;
+	_uvIndices[2] = uvIndex2;
 	_averageZ = 0;
 	_color = RGB(0, 0, 0);
 }
@@ -25,6 +28,11 @@ Polygon3D::Polygon3D(const Polygon3D& p) : _indices{ 0 }
 int Polygon3D::GetIndex(int index) const
 {
 	return _indices[index];
+}
+
+int Polygon3D::GetUVIndex(int index) const
+{
+	return _uvIndices[index];
 }
 
 bool Polygon3D::GetVisibility() const
@@ -84,6 +92,9 @@ void Polygon3D::Copy(const Polygon3D& other)
 	_indices[0] = other.GetIndex(0);
 	_indices[1] = other.GetIndex(1);
 	_indices[2] = other.GetIndex(2);
+	_uvIndices[0] = other.GetUVIndex(0);
+	_uvIndices[1] = other.GetUVIndex(1);
+	_uvIndices[2] = other.GetUVIndex(2);
 	_isVisible = other.GetVisibility();
 	_normalVector = other.GetNormalVector();
 	_averageZ = other.GetAverageZ();

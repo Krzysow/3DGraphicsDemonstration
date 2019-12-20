@@ -67,7 +67,7 @@ bool Matrix::operator== (const Matrix& other) const
 
 Vertex Matrix::operator* (const Vertex& other) const
 {
-	Vertex vertex;
+	Vertex vertex(other);
 	vertex.SetX(_m[0][0] * other.GetX() + _m[0][1] * other.GetY() + _m[0][2] * other.GetZ() + _m[0][3] * other.GetW());
 	vertex.SetY(_m[1][0] * other.GetX() + _m[1][1] * other.GetY() + _m[1][2] * other.GetZ() + _m[1][3] * other.GetW());
 	vertex.SetZ(_m[2][0] * other.GetX() + _m[2][1] * other.GetY() + _m[2][2] * other.GetZ() + _m[2][3] * other.GetW());

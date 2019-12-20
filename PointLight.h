@@ -1,24 +1,25 @@
 #pragma once
+#include "Light.h"
 #include "Vertex.h"
 
-class PointLight
+class PointLight : public Light
 {
 public:
-	PointLight(int red, int green, int blue, Vertex position, float a, float b, float c);
+	PointLight(int red, int green, int blue, Vertex position, float a, float b, float c) : Light(red, green, blue)
+	{
+		_sourcePosition = position;
+		_a = a;
+		_b = b;
+		_c = c;
+	}
 	~PointLight();
 
-	int GetRedIntensity() const;
-	int GetGreenIntensity() const;
-	int GetBlueIntensity() const;
 	Vertex GetSourcePosition() const;
 	float GetA() const;
 	float GetB() const;
 	float GetC() const;
 
-private:
-	int _redIntensity;
-	int _greenIntensity;
-	int _blueIntensity;
+protected:
 	Vertex _sourcePosition;
 	float _a;
 	float _b;

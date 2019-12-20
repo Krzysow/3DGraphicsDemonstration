@@ -1,20 +1,19 @@
 #pragma once
+#include "Light.h"
 #include "Vector3D.h"
-class DirectionalLight
+
+class DirectionalLight : public Light
 {
 public:
-	DirectionalLight(int red, int green, int blue, Vector3D direction);
+	DirectionalLight(int red, int green, int blue, Vector3D direction) : Light(red, green, blue)
+	{
+		_sourceDirection = direction;
+	}
 	~DirectionalLight();
 
-	int GetRedIntensity() const;
-	int GetGreenIntensity() const;
-	int GetBlueIntensity() const;
 	Vector3D GetSourceDirection() const;
 
 private:
-	int _redIntensity;
-	int _greenIntensity;
-	int _blueIntensity;
 	Vector3D _sourceDirection;
 };
 

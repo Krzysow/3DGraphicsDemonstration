@@ -1,17 +1,9 @@
 #pragma once
-class AmbientLight
+#include "Light.h"
+
+class AmbientLight : public Light
 {
 public:
-	AmbientLight(int red, int green, int blue);
+	AmbientLight(int red, int green, int blue) : Light(red, green, blue) {}
 	~AmbientLight();
-
-	int GetRedIntensity() const;
-	int GetGreenIntensity() const;
-	int GetBlueIntensity() const;
-
-private:
-	int _redIntensity;
-	int _greenIntensity;
-	int _blueIntensity;
-
 };

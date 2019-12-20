@@ -150,12 +150,16 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="DirectionalLight.cpp" />
     <ClCompile Include="Framework.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="MD2Loader.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Polygon3D.cpp" />
     <ClCompile Include="Rasteriser.cpp" />
+    <ClCompile Include="SpotLight.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureUV.cpp" />
     <ClCompile Include="Vector3D.cpp" />
     <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
@@ -165,6 +169,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="Framework.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="MD2Loader.h" />
     <ClInclude Include="Model.h" />
@@ -172,7 +177,10 @@
     <ClInclude Include="Polygon3D.h" />
     <ClInclude Include="Rasteriser.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SpotLight.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureUV.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>

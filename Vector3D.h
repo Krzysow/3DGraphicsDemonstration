@@ -19,6 +19,9 @@ public:
 	Vector3D& operator= (const Vector3D& rhs);
 	bool operator== (const Vector3D& rhs) const;
 	const Vector3D operator+ (const Vector3D& rhs) const;
+	const Vector3D operator- (const Vector3D& rhs) const;
+	const Vector3D operator- () const;
+	const Vector3D operator* (const float rhs) const;
 	const Vector3D operator/ (const int rhs) const;
 
 
