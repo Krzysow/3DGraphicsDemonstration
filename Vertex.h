@@ -27,6 +27,7 @@ public:
 	void SetY(const float y);
 	void SetZ(const float z);
 	void SetW(const float w);
+	void SetPerspectiveZ(const float perspectiveZ);
 	void SetNormalVector(const Vector3D normal);
 	void SetColor(const int red, const int green, const int blue);
 	void SetContributions(const int contributions);
@@ -38,6 +39,7 @@ public:
 	Vertex& operator= (const Vertex& rhs);
 	bool operator== (const Vertex& rhs) const;
 	const Vertex operator+ (const Vertex& rhs) const;
+	const Vertex operator/ (const float& rhs) const;
 
 	void Dehomogenize();
 

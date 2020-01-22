@@ -12,7 +12,7 @@
 
 using namespace std;
 
-//bool isGreater(Polygon3D x, Polygon3D y);
+float smoothstep(float edge0, float edge1, float x);
 
 class Model
 {
@@ -26,6 +26,20 @@ public:
 	const vector<Vertex>& GetTransformedVertices();
 	const vector<Polygon3D>& GetPolygons();
 	const vector<TextureUV>& GetUV();
+
+	float GetAmbientRedCoefficient() const;
+	float GetAmbientGreenCoefficient() const;
+	float GetAmbientBlueCoefficient() const;
+
+	float GetDiffuseRedCoefficient() const;
+	float GetDiffuseGreenCoefficient() const;
+	float GetDiffuseBlueCoefficient() const;
+
+	float GetSpecularRedCoefficient() const;
+	float GetSpecularGreenCoefficient() const;
+	float GetSpecularBlueCoefficient() const;
+
+	float GetRoughness() const;
 
 	Texture& GetTexture();
 

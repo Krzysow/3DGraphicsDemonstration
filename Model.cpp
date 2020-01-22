@@ -58,6 +58,56 @@ const vector<TextureUV>& Model::GetUV()
 	return _uvCoordinates;
 }
 
+float Model::GetAmbientRedCoefficient() const
+{
+	return ka_red;
+}
+
+float Model::GetAmbientGreenCoefficient() const
+{
+	return ka_green;
+}
+
+float Model::GetAmbientBlueCoefficient() const
+{
+	return ka_blue;
+}
+
+float Model::GetDiffuseRedCoefficient() const
+{
+	return kd_red;
+}
+
+float Model::GetDiffuseGreenCoefficient() const
+{
+	return kd_green;
+}
+
+float Model::GetDiffuseBlueCoefficient() const
+{
+	return kd_blue;
+}
+
+float Model::GetSpecularRedCoefficient() const
+{
+	return ks_red;
+}
+
+float Model::GetSpecularGreenCoefficient() const
+{
+	return ks_green;
+}
+
+float Model::GetSpecularBlueCoefficient() const
+{
+	return ks_blue;
+}
+
+float Model::GetRoughness() const
+{
+	return _roughness;
+}
+
 Texture& Model::GetTexture()
 {
 	return _texture;
@@ -589,7 +639,7 @@ void Model::CalculateNormalVectorForVertices()
 	{
 		Vertex& vertex = _transformedVertices[i];
 
-		vertex.SetNormalVector(vertex.GetNormalVector() / vertex.GetContributions());
+		vertex.SetNormalVector((vertex.GetNormalVector() / vertex.GetContributions()).GetUnitVector());
 	}
 }
 

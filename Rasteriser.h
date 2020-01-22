@@ -30,6 +30,7 @@ public:
 	void MyDrawSolidFlat(const Bitmap& bitmap);
 	void DrawGouraud(const Bitmap& bitmap);
 	void DrawSolidTextured(const Bitmap& bitmap);
+	void DrawPhong(const Bitmap& bitmap);
 
 	void FillTopPolygonFlat(const HDC& hDc, const Vertex& vertex0, const Vertex& vertex1, const Vertex& vertex2, const COLORREF& color);
 	void FillBottomPolygonFlat(const HDC& hDc, const Vertex& vertex0, const Vertex& vertex1, const Vertex& vertex2, const COLORREF& color);
@@ -37,6 +38,10 @@ public:
 	void FillBottomPolygonGouraud(const HDC& hDc, const Vertex& vertex0, const Vertex& vertex1, const Vertex& vertex2);
 	void FillTopSolidTextured(const HDC& hDc, const Vertex& vertex0, const Vertex& vertex1, const Vertex& vertex2);
 	void FillBottomSolidTextured(const HDC& hDc, const Vertex& vertex0, const Vertex& vertex1, const Vertex& vertex2);
+	void FillTopPhong(const HDC& hDc, const Vertex& vertex0, const Vertex& vertex1, const Vertex& vertex2, const Vertex& vertexReal0, const Vertex& vertexReal1, const Vertex& vertexReal2);
+	void FillBottomPhong(const HDC& hDc, const Vertex& vertex0, const Vertex& vertex1, const Vertex& vertex2, const Vertex& vertexReal0, const Vertex& vertexReal1, const Vertex& vertexReal2);
+
+	COLORREF CalculateLightingPhong(Vector3D pixelNormal, Vertex pixelPosition);
 
 private:
 	float _x{ 0.0f };

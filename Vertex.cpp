@@ -108,6 +108,10 @@ void Vertex::SetW(const float w)
 	_w = w;
 }
 
+void Vertex::SetPerspectiveZ(const float perspectiveZ)
+{
+	_perspectiveZ = perspectiveZ;
+}
 void Vertex::SetNormalVector(const Vector3D normalVector)
 {
 	_normalVector = normalVector;
@@ -169,6 +173,11 @@ bool Vertex::operator==(const Vertex& rhs) const
 const Vertex Vertex::operator+(const Vertex& rhs) const
 {
 	return Vertex(_x + rhs.GetX(), _y + rhs.GetY(), _z + rhs.GetZ());
+}
+
+const Vertex Vertex::operator/(const float& rhs) const
+{
+	return Vertex(_x / rhs, _y / rhs, _z / rhs);
 }
 
 void Vertex::Dehomogenize()
