@@ -218,7 +218,7 @@ void Rasteriser::Render(const Bitmap& bitmap)
 		_model.DehomogenizeAll();
 		_model.ApplyTransformToTransformedVertices(_viewMatrix);
 		DrawSolidTextured(bitmap);
-		DrawString(bitmap, L"Tuxturing With Perspective Correction");
+		DrawString(bitmap, L"Txturing With Perspective Correction");
 	}
 	else if (_state == 12)
 	{
@@ -245,7 +245,7 @@ void Rasteriser::Render(const Bitmap& bitmap)
 		_model.DehomogenizeAll();
 		_model.ApplyTransformToTransformedVertices(_viewMatrix);
 		DrawSolidTextured(bitmap);
-		DrawString(bitmap, L"Tuxturing With Perspective Correction");
+		DrawString(bitmap, L"Texturing With Perspective Correction");
 	}
 	else if (_state == 13)
 	{
@@ -1194,7 +1194,7 @@ void Rasteriser::DrawPhong(const Bitmap& bitmap)
 
 				tempReal = Vertex(
 					vertexReal0.GetX() + (vertex1.GetY() - vertex0.GetY()) / (vertex2.GetY() - vertex0.GetY()) * (vertexReal2.GetX() - vertexReal0.GetX()),
-					vertexReal1.GetY(),// +(vertex1.GetY() - vertex0.GetY()) / (vertex2.GetY() - vertex0.GetY()) * (vertexReal2.GetY() - vertexReal0.GetY()),
+					vertexReal0.GetY() + (vertex1.GetY() - vertex0.GetY()) / (vertex2.GetY() - vertex0.GetY()) * (vertexReal2.GetY() - vertexReal0.GetY()),
 					vertexReal0.GetZ() + (vertex1.GetY() - vertex0.GetY()) / (vertex2.GetY() - vertex0.GetY()) * (vertexReal2.GetZ() - vertexReal0.GetZ()));
 
 				float vectorX = vertex0.GetNormalVector().GetX() + ((vertex1.GetY() - vertex0.GetY()) / (vertex2.GetY() - vertex0.GetY())) * (vertex2.GetNormalVector().GetX() - vertex0.GetNormalVector().GetX());
